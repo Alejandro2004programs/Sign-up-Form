@@ -1,49 +1,182 @@
-/* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  /* 2. Remove default margin */
-  * {
-    margin: 0;
-  }
-  
-  body {
-    /* 3. Add accessible line-height */
-    line-height: 1.5;
-    /* 4. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* 5. Improve media defaults */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  
-  /* 6. Inherit fonts for form controls */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  
-  /* 7. Avoid text overflows */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  
-  /* 8. Improve line wrapping */
-  p {
-    text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-  
-  /*
-    9. Create a root stacking context
-  */
-  #root, #__next {
-    isolation: isolate;
-  }
+/* CSS Reset */
 
-  
+/* *, *::before, *::after {
+  box-sizing: border-box;
+} */
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  width: 150px; 
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+} */
+
+/* #root, #__next {
+  isolation: isolate;
+} */
+
+/* Styling starts here: */
+
+:root {
+  --grayBackground: rgb(247, 247, 247);
+  --greenColor: #596D48;
+  --grayInputBorder: #E5E7EB;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./Images/Norse-Bold\ \(3\).otf");
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.imageSectionContainer {
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+  background-image: url("./Images/signUpFormPicture.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+}
+
+.mainContentContainer {
+  grid-row: 1 / 4;
+  grid-column: 2 / 3;
+}
+
+.imageText {
+  font-family: "MyCustomFont", sans-serif;
+}
+
+/* Main Content 1 */
+
+.mainContent1 {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  background-color: var(--grayBackground);
+}
+
+.headerTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-family: sans-serif, Arial;
+  font-weight: 700;
+  font-size: 20px;
+  width: 600px;
+  margin-left: 100px;
+  margin-top: 50px;
+
+}
+
+/* Main Content 2 */
+
+.mainContent2 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  padding-left: 100px;
+}
+
+.mainContent2 > p {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+input {
+  width: 200px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--grayInputBorder);
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 4px;
+  font-family: Arial;
+}
+
+form > div {
+  display: flex;
+  gap: 64px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: small
+}
+
+form > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#password:invalid, #confirmPassword:invalid {
+  border: 1px solid red;
+}
+
+#firstName:focus {
+  border: 1px solid blue;
+}
+
+/* Main Content 3 */
+
+.mainContent3 {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  background-color: var(--grayBackground);
+  padding-left: 100px;
+  padding-top: 24px;
+}
+
+button {
+  background: var(--greenColor);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+a {
+  color: var(--greenColor);
+  text-decoration: none;
+}
+

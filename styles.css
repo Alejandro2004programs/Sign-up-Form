@@ -10,36 +10,8 @@
 
 body {
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-input, button, textarea, select {
-  font: inherit;
-  width: 150px; 
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-p {
-  text-wrap: pretty;
-}
-
-/* h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-} */
-
-/* #root, #__next {
-  isolation: isolate;
-} */
-
-/* Styling starts here: */
 
 :root {
   --grayBackground: rgb(247, 247, 247);
@@ -143,8 +115,14 @@ form > div > div {
   border: 1px solid red;
 }
 
-#firstName:focus {
+/* #firstName:focus, #lastName:focus, #email:focus, #phoneNumber:focus {
   border: 1px solid blue;
+  outline: none;
+} */
+
+input:focus {
+  border: 1px solid blue;
+  outline: none;
 }
 
 /* Main Content 3 */
@@ -155,6 +133,7 @@ form > div > div {
   background-color: var(--grayBackground);
   padding-left: 100px;
   padding-top: 24px;
+  font-family: sans-serif, Arial;
 }
 
 button {
@@ -162,8 +141,10 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 12px 48px;
   margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 button:hover {
@@ -178,5 +159,6 @@ button:active {
 a {
   color: var(--greenColor);
   text-decoration: none;
+  font-weight: 700;
 }
 
